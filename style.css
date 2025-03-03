@@ -149,4 +149,12 @@ html, body {
     /* Add a gap at the top of the footer text */
     padding-top: 10px;
   }
+  .wedding-date {
+    font-family: 'Sacramento', cursive; /* Same whispering signature font */
+    font-size: 1.2rem;                  /* Adjust as you like */
+    margin: 0;                          /* Minimal spacing reset */
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
   
