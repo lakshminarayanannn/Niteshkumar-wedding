@@ -1,0 +1,152 @@
+/* ============================
+   1) BASIC PAGE LAYOUT
+============================ */
+/* Make body fill the screen and use Flexbox to control header/main/footer */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* full viewport height */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header & Footer have fixed heights; main fills the rest. */
+  header {
+    flex: 0 0 60px; /* fixed height for heading */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer {
+    flex: 0 0 40px; /* fixed height for footer */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* The main content area expands to fill leftover space.
+     Added vertical gap of 0.5in between rows */
+  #mainContent {
+    flex: 1;
+    margin: 0 1in; /* 1-inch margin left & right */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5in; /* gap between rows */
+    overflow: hidden; /* hide any overflow to prevent scrolling */
+  }
+  
+  /* ============================
+     2) TWO ROWS, SAME HEIGHT
+  ============================ */
+  /* Each row is a flex container for its items.
+     They will equally share the available space after accounting for the gap. */
+  .row {
+    flex: 1;
+    display: flex;
+    gap: 0.5rem;     /* horizontal space between items */
+    overflow: hidden;/* ensure no vertical scroll if content is large */
+  }
+  
+  /* Each row has 3 items => each item is 1/3 of row width. */
+  .item {
+    flex: 1;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;   /* so child <img>/<video> can fill it */
+  }
+  
+  /* Force images/videos to fill each tile.
+     'object-fit: cover' means some cropping if aspect ratio differs. */
+  .item img,
+  .item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* ============================
+     3) LIGHT/DARK MODE
+  ============================ */
+  body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  /* Toggle switch (optional) */
+  .toggle-container {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+  }
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .slider.round {
+    border-radius: 28px;
+  }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+  }
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  input:checked + .slider {
+    background-color: #888;
+  }
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+  
+  /* ============================
+     4) HEADER & FOOTER STYLING
+  ============================ */
+  /* Single-line heading: no wrap; using the whispering signature font */
+  header h1 {
+    font-size: 4.2rem;
+    font-weight: 600;
+    white-space: nowrap; /* keep it on one line */
+    margin: 0;
+    font-family: 'Sacramento', cursive;
+    /* Extra gap below the heading text */
+    padding-bottom: 10px;
+  }
+  footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    /* Add a gap at the top of the footer text */
+    padding-top: 10px;
+  }
+  
