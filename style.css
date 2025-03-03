@@ -182,7 +182,8 @@ footer p {
     flex: 0 0 calc(33.33% - 0.25rem);
   }
   .toggle-container {
-    transform: scale(0.7);
+    transform: scale(0.3);
+    margin-top: 10px;
   }
 
 }
