@@ -1,3 +1,28 @@
+@media (max-width: 600px) {
+  /* Reduce side margins on mobile */
+  #mainContent {
+    margin: 0 0.5rem;
+    gap: 0.25in; /* Smaller vertical gap between rows */
+  }
+  
+  /* Optionally adjust the gap between items in rows */
+  .row {
+    gap: 0.25rem;
+  }
+
+  /* Scale down header font sizes and wedding date for smaller screens */
+  header h1 {
+    font-size: 2.5rem;
+  }
+  .wedding-date {
+    font-size: 1rem;
+  }
+  
+  /* Adjust footer text size if needed */
+  footer p {
+    font-size: 0.8rem;
+  }
+}
 /* ============================
    1) BASIC PAGE LAYOUT
 ============================ */
