@@ -159,28 +159,30 @@ footer p {
 /* ============================
    5) RESPONSIVE MOBILE ADJUSTMENTS
 ============================ */
-/* Modify the toggle container positioning for mobile */
 @media (max-width: 600px) {
-  /* Move the toggle switch below or to a better position on mobile */
+  /* Reduce side margins and adjust vertical gap */
+  #mainContent {
+    margin: 0 0.5rem;
+    gap: 0.25in;
+  }
+  
+  /* Adjust horizontal gap between items */
+  .row {
+    gap: 0.25rem;
+  }
+  
+  /* Reduce header font size for mobile */
+  header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  /* Force each item in a row to be about one-third the width 
+     so that all 3 items fit in one row even on small screens */
+  .row .item {
+    flex: 0 0 calc(33.33% - 0.25rem);
+  }
   .toggle-container {
-    top: 60px; /* Position it below the header instead of inside it */
-    right: 0.5rem; /* Match the reduced side margins */
+    transform: scale(0.7);
   }
-  
-  /* Make the toggle switch smaller on mobile */
-  .switch {
-    width: 40px;
-    height: 22px;
-  }
-  
-  .slider:before {
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(18px);
-  }
+
 }
