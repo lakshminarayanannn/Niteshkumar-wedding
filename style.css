@@ -170,4 +170,15 @@ footer p {
   .row {
     gap: 0.25rem;
   }
+  
+  /* Reduce header font size for mobile */
+  header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  /* Force each item in a row to be about one-third the width 
+     so that all 3 items fit in one row even on small screens */
+  .row .item {
+    flex: 0 0 calc(33.33% - 0.25rem);
+  }
 }
